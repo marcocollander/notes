@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
-
 /* Variables */
-
-$color-light: #fff;
-$color-dark: #111;
-
-$font-logo: "Sacramento", cursive;
-$font-header: "Oswald", sans-serif;
-$font-text: "Source Sans Pro", sans-serif;
-
 /* Global */
-
 *,
 *::before,
 *::after {
@@ -18,9 +8,9 @@ $font-text: "Source Sans Pro", sans-serif;
 }
 
 body {
-  background: $color-light;
-  font-family: $font-text;
-  color: $color-dark;
+  background: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #111;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
@@ -34,17 +24,17 @@ body {
 .section-title {
   font-size: 22px;
   text-transform: uppercase;
-  font-family: $font-header;
+  font-family: "Oswald", sans-serif;
   font-weight: 600;
-  span {
-    text-transform: none;
-    font-weight: 400;
-    color: lighten($color-dark, 20%);
-  }
+}
+
+.section-title span {
+  text-transform: none;
+  font-weight: 400;
+  color: #444444;
 }
 
 /* Layout */
-
 .wrapper {
   display: flex;
   margin-left: 10px;
@@ -60,17 +50,16 @@ body {
 
 .sidebar,
 .posts {
-  background: $color-light;
+  background: #fff;
   margin-right: 10px;
   padding: 30px;
-  border: 1px solid $color-dark;
+  border: 1px solid #111;
   border-radius: 5px;
 }
 
 /* Logo */
-
 .logo {
-  font-family: $font-logo;
+  font-family: "Sacramento", cursive;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
@@ -78,41 +67,37 @@ body {
 }
 
 /* Lists */
-
 .list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  .active {
-    font-weight: bold;
-  }
 }
 
-.list-horizontal {
-  li {
-    display: inline-block;
-  }
+.list .active {
+  font-weight: bold;
+}
+
+.list-horizontal li {
+  display: inline-block;
 }
 
 /* Authors */
-
-.authors {
-  li {
-    margin-bottom: 12px;
-  }
+.authors li {
+  margin-bottom: 12px;
 }
 
 /* Post */
-
 .post {
   display: none;
   color: black;
-  &.active {
-    display: block;
-  }
-  .fat {
-    font-weight: bold;
-  }
+}
+
+.post.active {
+  display: block;
+}
+
+.post .fat {
+  font-weight: bold;
 }
 
 .post-author {
@@ -121,7 +106,10 @@ body {
 
 .post-tags {
   display: flex;
-  p {
-    margin: 0 10px 0 0;
-  }
 }
+
+.post-tags p {
+  margin: 0 10px 0 0;
+}
+
+/*# sourceMappingURL=style.css.map */

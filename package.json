@@ -1,8 +1,24 @@
 {
-  "name": "notes",
-  "version": "1.0.0",
+  "author": "Zenon Marek Raubuć <m.raubuc@wp.pl> (https://raubuc.net)",
   "description": "Website design with JavaScript learning notes",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "globstar": "^1.0.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1"
+  },
+  "keywords": [],
+  "license": "ISC",
   "main": "index.js",
+  "name": "notes",
+  "repository": {
+    "url": "https://github.com/marcocollander/notes.git"
+  },
   "scripts": {
     "init-project": "npm install && npm-run-all init:*",
     "init:dirs": "mkdirp sass css vendor images js",
@@ -12,24 +28,12 @@
     "test:html": "globstar nu-html-checker *.html",
     "build": "npm-run-all build:* test",
     "build:sass": "node-sass --output-style compact -o css sass",
-    "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
+    "build:postcss": "postcss css/style.css",
+    "build-dev": "npm-run-all build-dev:sass build:postcss",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build:* build-dev -p watch:*",
-    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\"",
+    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" \"js/*.js\"",
     "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
   },
-  "keywords": [],
-  "author": "Zenon Marek Raubuć <m.raubuc@wp.pl> (https://raubuc.net)",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer-cli": "^1.0.0",
-    "browser-sync": "^2.26.13",
-    "globstar": "^1.0.0",
-    "mkdirp": "^1.0.4",
-    "node-sass": "^5.0.0",
-    "npm-run-all": "^4.1.5",
-    "nu-html-checker": "^0.1.0",
-    "onchange": "^7.1.0"
-  }
+  "version": "1.0.0"
 }

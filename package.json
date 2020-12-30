@@ -3,6 +3,7 @@
   "description": "Website design with JavaScript learning notes",
   "devDependencies": {
     "browser-sync": "^2.26.13",
+    "eslint": "^7.16.0",
     "globstar": "^1.0.0",
     "mkdirp": "^1.0.4",
     "node-sass": "^5.0.0",
@@ -10,7 +11,9 @@
     "nu-html-checker": "^0.1.0",
     "onchange": "^7.1.0",
     "postcss": "^8.2.2",
-    "postcss-cli": "^8.3.1"
+    "postcss-cli": "^8.3.1",
+    "stylelint": "^13.8.0",
+    "stylelint-scss": "^3.18.0"
   },
   "keywords": [],
   "license": "ISC",
@@ -24,14 +27,16 @@
     "init:dirs": "mkdirp sass css vendor images js",
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
-    "test": "npm run test:html",
+    "test": "npm-run-all test:*",
     "test:html": "globstar nu-html-checker *.html",
+    "test:js": "eslint js/",
+    "test:scss": "stylelint sass/",
     "build": "npm-run-all build:* test",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:postcss": "postcss css/style.css",
     "build-dev": "npm-run-all build-dev:sass build:postcss",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "watch": "npm-run-all build:* build-dev -p watch:*",
+    "watch": "npm-run-all build build-dev -p watch:*",
     "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" \"js/*.js\"",
     "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
   },

@@ -1,0 +1,77 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.section__heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.header {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__heading {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.logo__image {
+  border-radius: 50%;
+}
+
+.menu {
+  margin-top: 20px;
+  list-style: none;
+  display: none;
+  transition: all 0.4s;
+}
+.menu--active {
+  display: block;
+}
+.menu__item {
+  margin-bottom: 10px;
+}
+.menu__link {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+.hamburger {
+  padding: 7px;
+  background: none;
+  border: solid 1px black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger__item {
+  margin: 3px;
+  width: 25px;
+  height: 3px;
+  background: black;
+  transition: all 0.4s;
+}
+.hamburger__item--rotate {
+  transform: rotate(45deg) translateX(4px) translateY(4px);
+}
+.hamburger__item--reverse {
+  transform: rotate(-45deg) translateX(2px) translateY(-3px);
+}
+.hamburger__item--non_display {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

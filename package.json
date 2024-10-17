@@ -1,0 +1,18 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch public/sass:public/css"
+  },
+  "repository": {
+    "url": "https://github.com/marcocollander/notes.git"
+  },
+  "keywords": [],
+  "author": "Zenon Marek Raubuć",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.80.1"
+  }
+}

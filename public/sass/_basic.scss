@@ -1,0 +1,32 @@
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800
+
+//.open-sans-
+//<
+//uniquifier > {
+//    font-family: "Open Sans", sans-serif;
+//    font-optical-sizing: auto;
+//    font-weight: < weight>;
+//    font-style: normal;
+//    font-variation-settings: "wdth" 100;
+//}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.section {
+    &__heading {
+        text-align: center;
+        font-weight: 500;
+        font-size: 3rem;
+
+    }
+}

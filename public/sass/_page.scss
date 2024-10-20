@@ -1,0 +1,45 @@
+// Page create note
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__fieldset {
+    width: 100%;
+    padding: 30px;
+  }
+
+
+  &__list {
+    list-style: none;
+
+    &-item {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      label {
+        flex: 1;
+        font-size: 1.8rem;
+        text-align: left;
+
+      }
+
+      input {
+        flex: 4;
+        font-size: 1.8rem;
+
+      }
+
+      textarea {
+        flex: 4;
+      }
+    }
+  }
+
+}
+
+

@@ -18,15 +18,34 @@
 }
 
 :root {
+    height: 100%;
     font-size: 62.5%;
     font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+
 }
 
 .section {
     &__heading {
         text-align: center;
         font-weight: 500;
-        font-size: 3rem;
+        font-size: 2rem;
+
+    }
+
+    &__page {
+        margin: 30px;
+        text-align: center;
+        font-size: 1.6rem;
 
     }
 }

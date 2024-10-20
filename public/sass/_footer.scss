@@ -1,0 +1,17 @@
+.footer {
+    padding: 10px;
+    background-color: darkmagenta;
+    font-size: 1.6rem;
+    color: #fff;
+
+    &__heading {
+        margin-top: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}
+
+.copyRight {
+    margin: 20px;
+    text-align: center;
+}

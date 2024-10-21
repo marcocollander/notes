@@ -10,7 +10,6 @@
     padding: 30px;
   }
 
-
   &__list {
     list-style: none;
 
@@ -19,7 +18,7 @@
       margin-top: 30px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      letter-spacing: 1px;
 
       label {
         flex: 1;
@@ -29,13 +28,17 @@
       }
 
       input {
-        flex: 4;
         font-size: 1.8rem;
+
+        &[type="submit"] {
+          padding: 10px 0;
+          letter-spacing: 1px;
+        }
 
       }
 
       textarea {
-        flex: 4;
+
       }
     }
   }

@@ -14,34 +14,34 @@ namespace Notes;
 
 */
 
+use Notes\Exceptions\AppException;
+use Notes\Exceptions\ConfigurationException;
+use Throwable;
+
 require_once 'src/utils/debug.php';
-require_once 'src/View.php';
+require_once 'src/Controller.php';
+require_once 'src/Exceptions/AppException.php';
+require_once 'src/Exceptions/ConfigurationException.php';
 
-const DEFAULT_ACTION = 'list';
+$configuration = require_once('config/config.php');
 
-$action = $_GET['action'] ?? DEFAULT_ACTION;
+$request = [
+    'get' => $_GET,
+    'post' => $_POST
+];
 
-$viewParams = [];
+try {
+    Controller::initConfiguration($configuration);
+    (new Controller($request))->run();
 
-
-
-if ($action === 'create') {
-    $page = 'create';
-
-    if (!empty($_POST)) {
-        $data = [
-            'title' => $_POST['title'],
-            'description' => $_POST['description'],
-        ];
-        dump($data);
-    }
-
-    $viewParams['resultCreate'] = 'Create Note';
-} else {
-    $page = 'list';
-    $viewParams['resultList'] = 'Display Notes';
+} catch (ConfigurationException $e) {
+    //mail('xxx@xxx.com', 'Errro', $e->getMessage());
+    echo '<h1>Wystąpił błąd w aplikacji</h1>';
+    echo 'Problem z applikacją, proszę spróbować za chwilę.';
+} catch (AppException $e) {
+    echo '<h1>Wystąpił błąd w aplikacji</h1>';
+    echo '<h3>' . $e->getMessage() . '</h3>';
+} catch (Throwable $e) {
+    echo '<h1>Wystąpił błąd w aplikacji</h1>';
+    dump($e);
 }
-
-
-$view = new View();
-$view->render($page, $viewParams);

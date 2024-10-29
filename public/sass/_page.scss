@@ -1,3 +1,70 @@
+.section {
+  &__heading {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+
+  }
+
+  &__page {
+    margin: 30px;
+    text-align: center;
+    font-size: 1.6rem;
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--note {
+      width: 75%;
+      margin: 10px auto;
+      text-align: left;
+    }
+
+  }
+}
+
+// Page list notes
+
+.table {
+  td:first-child {
+    width: 10%;
+  }
+  td:nth-child(2){
+    width: 30%;
+  }
+}
+
+.btn-note {
+  margin: 5px 0;
+  padding: 5px 20px;
+  letter-spacing: 1px;
+
+  &--return {
+    margin-top: 20px;
+  }
+}
+
+
+// Page note
+
+.note-items {
+  list-style: none;
+  li {
+    margin-top: 20px;
+  }
+
+  p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+}
+
+
+
 // Page create note
 
 .form {

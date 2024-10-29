@@ -4,35 +4,25 @@ declare(strict_types=1);
 
 namespace Notes;
 
-/*
- * Na produkcji odkomentujemy te
- * dwie linijki kodu , aby świadomie wyłączyć
- * wyświetlanie komunikatów o błędach i oczywiście zakomentujemy funkcję debug/dump
+require_once 'src/utils/debug.php';
+require_once 'src/NoteController.php';
+require_once 'src/Request.php';
+require_once 'src/Exceptions/AppException.php';
+require_once 'src/Exceptions/ConfigurationException.php';
 
-    error_reporting(0);
-    ini_set('display_errors', '0');
-
-*/
-
+use Notes\Request;
 use Notes\Exceptions\AppException;
 use Notes\Exceptions\ConfigurationException;
 use Throwable;
 
-require_once 'src/utils/debug.php';
-require_once 'src/Controller.php';
-require_once 'src/Exceptions/AppException.php';
-require_once 'src/Exceptions/ConfigurationException.php';
 
 $configuration = require_once('config/config.php');
 
-$request = [
-    'get' => $_GET,
-    'post' => $_POST
-];
+$request = new Request($_GET, $_POST);
 
 try {
-    Controller::initConfiguration($configuration);
-    (new Controller($request))->run();
+    NoteController::initConfiguration($configuration);
+    (new NoteController($request))->run();
 
 } catch (ConfigurationException $e) {
     //mail('xxx@xxx.com', 'Errro', $e->getMessage());

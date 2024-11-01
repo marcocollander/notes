@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 <div class="wrapper">
 <header class="header">
     <div class="logo">
-        <img width="60" class="logo__image" src="/public/image/logo.png" alt="Logo portalu">
+        <img width="50" class="logo__image" src="/public/image/logo.png" alt="Logo portalu">
     </div>
     <h1 class="header__heading">Notatki</h1>
     <nav class="nav">

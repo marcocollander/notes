@@ -1,6 +1,6 @@
 .header {
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     background-color: darkmagenta;
     display: flex;
     justify-content: space-between;
@@ -8,7 +8,7 @@
     color: #ffffff;
 
     &__heading {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         font-weight: 600;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -27,11 +27,16 @@
 }
 
 .menu {
-    width: 120px;
+    padding: 10px;
+    width: 140px;
+    height: 140px;
     position:absolute;
     top: 0;
+    right: 20px;
     list-style: none;
     display: none;
+    background-color: antiquewhite;
+    border-radius: 10px;
 
     &--active {
         display: block;
@@ -39,19 +44,21 @@
     }
 
     &__item {
+        text-align: center;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
 
     &__link {
         text-decoration: none;
         font-size: 1.4rem;
-        color: #fff;
+        color: #000;
     }
 }
 
 .hamburger {
-    margin-top: -50px;
-    margin-right: -20px;
+    margin-top: -30px;
+    margin-right: -10px;
     padding: 7px;
     background: none;
     border: none;
@@ -61,18 +68,18 @@
     text-align: center;
     color: #fff;
     &__item {
-        margin: 3px;
-        width: 25px;
-        height: 3px;
+        margin: 2px;
+        width: 20px;
+        height: 2px;
         background: #ffffff;
         transition: all 0.4s;
 
         &--rotate {
-            transform: rotate(45deg) translateX(4px) translateY(4px);
+            transform: rotate(45deg) translateX(3px) translateY(2px);
         }
 
         &--reverse {
-            transform: rotate(-45deg) translateX(2px) translateY(-3px);
+            transform: rotate(-45deg) translateX(2px) translateY(-2px);
         }
 
         &--non_display {
@@ -87,7 +94,7 @@
     }
 
     to {
-        right: -35px;
+        right: -15px;
     }
 
 }

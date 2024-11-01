@@ -92,6 +92,43 @@ class Database
 
     /**
      * @param int $id
+     * @param array $data
+     * @throws StorageException
+     */
+    public function editNote(int $id, array $data): void
+    {
+        try {
+            $title = $this->conn->quote($data['title']);
+            $description = $this->conn->quote($data['description']);
+
+            $query = "
+        UPDATE notes
+        SET title = $title, description = $description
+        WHERE id = $id
+      ";
+
+            $this->conn->exec($query);
+        } catch (Throwable $e) {
+            throw new StorageException('Nie udało się zaktualizować notetki', 400, $e);
+        }
+    }
+
+    /**
+     * @param int $id
+     * @throws StorageException
+     */
+    public function deleteNote(int $id): void
+    {
+        try {
+            $query = "DELETE FROM notes WHERE id = $id LIMIT 1";
+            $this->conn->exec($query);
+        } catch (Throwable $e) {
+            throw new StorageException('Nie udało się usunąć notatki', 400, $e);
+        }
+    }
+
+    /**
+     * @param int $id
      * @return array
      * @throws NoFoundException
      * @throws StorageException
@@ -100,7 +137,12 @@ class Database
     {
         try {
             $query = "SELECT * FROM notes WHERE id = $id";
-            $note = $this->conn->query($query)->fetch(PDO::FETCH_ASSOC);
+            $note =
+                $this->
+                conn->
+                query($query)->
+                fetch(PDO::FETCH_ASSOC);
+
         } catch (Throwable $e) {
             throw new StorageException('Nie udało się pobrać notatki', 400, $e);
         }
@@ -113,16 +155,67 @@ class Database
     }
 
     /**
+     * @param int $pageNumber
+     * @param int $pageSize
+     * @param string $sortBy
+     * @param string $sortOrder
      * @return array
      * @throws StorageException
      */
-    public function getAllNotes(): array
-    {
+    public function getAllNotes(
+        int    $pageNumber,
+        int    $pageSize,
+        string $sortBy,
+        string $sortOrder
+    ): array {
+
         try {
-            $query = 'SELECT id, title, created FROM notes';
-            return $this->conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
+            $limit = $pageSize;
+            $offset = ($pageNumber - 1) * $pageSize;
+
+            if (!in_array($sortBy, ['created', 'title'])) {
+                $sortBy = 'title';
+            }
+
+            if (!in_array($sortOrder, ['asc', 'desc'])) {
+                $sortOrder = 'desc';
+            }
+
+            $query = "
+                SELECT id, title, created 
+                FROM notes 
+                ORDER BY $sortBy $sortOrder 
+                LIMIT $offset, $limit
+                ";
+
+            return
+                $this->
+                conn->
+                query($query)->
+                fetchAll(PDO::FETCH_ASSOC);
+
         } catch (Throwable $e) {
             throw new StorageException('Nie udało się pobrać danych o notatkach', 400, $e);
+        }
+    }
+
+    /**
+     * @return int
+     * @throws StorageException
+     */
+    public function getCount(): int
+    {
+        try {
+            $query = "SELECT count(*) AS cn FROM notes";
+            $result = $this->conn->query($query);
+            $result = $result->fetch(PDO::FETCH_ASSOC);
+            if ($result === false) {
+                throw new StorageException('Błąd przy próbie pobrania ilości notatek', 400);
+            }
+
+            return (int) $result['cn'];
+        } catch (Throwable $e) {
+            throw new StorageException('Nie udało się pobrać informacji o liczbie notatek', 400, $e);
         }
     }
 }

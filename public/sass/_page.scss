@@ -2,14 +2,14 @@
   &__heading {
     text-align: center;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.8rem;
 
   }
 
   &__page {
-    margin: 30px;
+    margin: 10px;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
 
     &--list {
       display: flex;
@@ -17,7 +17,7 @@
     }
 
     &--note {
-      width: 75%;
+      width: 100%;
       margin: 10px auto;
       text-align: left;
     }
@@ -33,16 +33,18 @@
   }
   td:nth-child(2){
     width: 30%;
+    text-align: left;
   }
 }
 
 .btn-note {
   margin: 5px 0;
-  padding: 5px 20px;
+  padding: 3px 10px;
   letter-spacing: 1px;
+  font-size: 1.2rem;
 
   &--return {
-    margin-top: 20px;
+    margin: 20px;
   }
 }
 
@@ -51,16 +53,15 @@
 
 .note-items {
   list-style: none;
-  li {
-    margin-top: 20px;
-  }
+  &__item {
+    margin: 10px;
 
-  p {
-    width: 80%;
-    margin: 0 auto;
-    text-align: justify;
+    p {
+      width: 90%;
+      margin: 0 auto;
+      text-align: justify;
+    }
   }
-
 }
 
 
@@ -71,6 +72,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__item {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 5px;
+    }
+
+    input {
+      margin-left: 20px;
+    }
+
+  }
+
+  &--sorted {
+    justify-content: space-evenly;
+
+  }
+
+  &--delete {
+    justify-content: flex-start;
+
+    input {
+      margin-left: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 
   &__fieldset {
     width: 100%;
@@ -89,13 +120,13 @@
 
       label {
         flex: 1;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         text-align: left;
 
       }
 
       input {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
 
         &[type="submit"] {
           padding: 10px 0;

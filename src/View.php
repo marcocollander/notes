@@ -16,13 +16,20 @@ class View
     {
         $clearParams = [];
 
-        foreach ($params as $key => $value) {
-            if (is_array($value)) {
-                $clearParams[$key] = $this->escape($value);
-            } elseif ($value) {
-                $clearParams[$key] = htmlspecialchars((string)$value);
-            } else {
-                $clearParams[$key] = $value;
+        foreach ($params as $key => $param) {
+            switch (true) {
+                case is_array($param):
+                    $clearParams[$key] = $this->escape($param);
+                    break;
+                case is_int($param):
+                    $clearParams[$key] = $param;
+                    break;
+                case $param:
+                    $clearParams[$key] = htmlentities($param);
+                    break;
+                default:
+                    $clearParams[$key] = $param;
+                    break;
             }
         }
 

@@ -10,7 +10,7 @@
                 </li>
                 <li class="form__list-item">
                     <label for="description">Treść: </label>
-                    <textarea name="description" id="description" class="textarea" rows="15">
+                    <textarea name="description" id="description" class="textarea"  maxlength="100" rows="15" cols="20">
 
                     </textarea>
                 </li>

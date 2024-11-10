@@ -161,17 +161,22 @@
 .form {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .form__item {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
+.form__item div {
+  text-align: left;
+}
 .form__item label {
   margin-top: 5px;
 }
 .form__item input {
+  margin-left: 15px;
+}
+.form__item .input-size {
   margin-left: 20px;
 }
 .form--sorted {
@@ -207,10 +212,13 @@
 .form__list-item input {
   font-size: 1.4rem;
 }
-.form__list-item input[type=submit] {
-  padding: 10px 0;
-  letter-spacing: 1px;
+form input[type=submit] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  letter-spacing: 2px;
 }
+
 .footer {
   padding: 10px;
   background-color: darkmagenta;

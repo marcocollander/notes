@@ -25,7 +25,8 @@ class AbstractModel
 
     private function createConnection(array $config): void
     {
-        $dsn = "mysql:dbname={$config['database']};port={$config['port']};host={$config['host']}";
+        //        $dsn = "mysql:dbname={$config['database']};port={$config['port']};host={$config['host']}";
+        $dsn = "mysql:dbname={$config['database']};host={$config['host']}";
         $this->conn = new PDO(
             $dsn,
             $config['username'],

@@ -62,13 +62,15 @@
             </div>
             <div class="form__item">
                 <div>Rozmiar paczki</div>
-                <label>1 <input name="pagesize" type="radio" value="1" <?php echo $size === 1 ? 'checked' : '' ?> /></label>
-                <label>5 <input name="pagesize" type="radio" value="5" <?php echo $size === 5 ? 'checked' : '' ?> /></label>
+                <label>1 <input class="input-size" name="pagesize" type="radio" value="1" <?php echo $size === 1 ? 'checked' : ''
+        ?> /></label>
+                <label>5 <input class="input-size" name="pagesize" type="radio" value="5" <?php echo $size === 5 ? 'checked' : ''
+        ?> /></label>
                 <label>10 <input name="pagesize" type="radio" value="10" <?php echo $size === 10 ? 'checked' : '' ?> /></label>
                 <label>25 <input name="pagesize" type="radio" value="25" <?php echo $size === 25 ? 'checked' : '' ?> /></label>
             </div>
             </div>
-            <input class="btn-note btn-note--return" type="submit" value="Wyślij"/>
+            <input type="submit" value="Wyślij"/>
         </form>
     </div>
 

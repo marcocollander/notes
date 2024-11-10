@@ -1,146 +1,159 @@
 .section {
-  &__heading {
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.8rem;
+    &__heading {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.8rem;
 
-  }
-
-  &__page {
-    margin: 10px;
-    text-align: center;
-    font-size: 1.1rem;
-
-    &--list {
-      display: flex;
-      flex-direction: column;
     }
 
-    &--note {
-      width: 100%;
-      margin: 10px auto;
-      text-align: left;
-    }
+    &__page {
+        margin: 10px;
+        text-align: center;
+        font-size: 1.1rem;
 
-  }
+        &--list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--note {
+            width: 100%;
+            margin: 10px auto;
+            text-align: left;
+        }
+
+    }
 }
 
 // Page list notes
 
 .table {
-  td:first-child {
-    width: 10%;
-  }
-  td:nth-child(2){
-    width: 30%;
-    text-align: left;
-  }
+    td:first-child {
+        width: 10%;
+    }
+
+    td:nth-child(2) {
+        width: 30%;
+        text-align: left;
+    }
 }
 
 .btn-note {
-  margin: 5px 0;
-  padding: 3px 10px;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
+    margin: 5px 0;
+    padding: 3px 10px;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
 
-  &--return {
-    margin: 20px;
-  }
+    &--return {
+        margin: 20px;
+    }
 }
 
 
 // Page note
 
 .note-items {
-  list-style: none;
-  &__item {
-    margin: 10px;
+    list-style: none;
 
-    p {
-      width: 90%;
-      margin: 0 auto;
-      text-align: justify;
+    &__item {
+        margin: 10px;
+
+        p {
+            width: 90%;
+            margin: 0 auto;
+            text-align: justify;
+        }
     }
-  }
 }
-
 
 
 // Page create note
 
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__item {
-    margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 
-    label {
-      margin-top: 5px;
-    }
 
-    input {
-      margin-left: 20px;
-    }
+    &__item {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
 
-  }
-
-  &--sorted {
-    justify-content: space-evenly;
-
-  }
-
-  &--delete {
-    justify-content: flex-start;
-
-    input {
-      margin-left: 20px;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  &__fieldset {
-    width: 100%;
-    padding: 30px;
-  }
-
-  &__list {
-    list-style: none;
-
-    &-item {
-      width: 100%;
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      letter-spacing: 1px;
-
-      label {
-        flex: 1;
-        font-size: 1.4rem;
-        text-align: left;
-
-      }
-
-      input {
-        font-size: 1.4rem;
-
-        &[type="submit"] {
-          padding: 10px 0;
-          letter-spacing: 1px;
+        div {
+            text-align: left;
         }
 
-      }
+        label {
+            margin-top: 5px;
+        }
 
-      textarea {
+        input {
+            margin-left: 15px;
+        }
 
-      }
+        .input-size {
+            margin-left: 20px;
+        }
+
     }
-  }
+
+    &--sorted {
+        justify-content: space-evenly;
+
+    }
+
+    &--delete {
+        justify-content: flex-start;
+
+        input {
+            margin-left: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__fieldset {
+        width: 100%;
+        padding: 30px;
+    }
+
+    &__list {
+        list-style: none;
+
+        &-item {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 1px;
+
+            label {
+                flex: 1;
+                font-size: 1.4rem;
+                text-align: left;
+
+            }
+
+            input {
+                font-size: 1.4rem;
+            }
+
+            textarea {
+
+            }
+        }
+    }
 
 }
+
+form {
+    input[type="submit"] {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+        letter-spacing: 2px;
+    }
+}
+
 
 

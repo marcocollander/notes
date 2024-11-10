@@ -59,7 +59,8 @@ class Database
      */
     private function createConnection(array $config): void
     {
-        $dsn = "mysql:dbname={$config['database']};port={$config['port']};host={$config['host']}";
+        //        $dsn = "mysql:dbname={$config['database']};port={$config['port']};host={$config['host']}";
+        $dsn = "mysql:dbname={$config['database']};host={$config['host']}";
         $this->conn = new PDO(
             $dsn,
             $config['username'],
@@ -182,9 +183,9 @@ class Database
             }
 
             $query = "
-                SELECT id, title, created 
-                FROM notes 
-                ORDER BY $sortBy $sortOrder 
+                SELECT id, title, created
+                FROM notes
+                ORDER BY $sortBy $sortOrder
                 LIMIT $offset, $limit
                 ";
 

@@ -11,7 +11,7 @@ use Notes\Exceptions\StorageException;
 
 class NoteController extends AbstractController
 {
-    private const int PAGE_SIZE = 10;
+    private const PAGE_SIZE = 10;
 
     /**
      * @throws StorageException

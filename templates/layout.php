@@ -35,7 +35,7 @@
         <?php
 
         if (isset($page)) {
-            require_once "pages/$page.php";
+            require_once "templates/pages/$page.php";
         } else {
             echo "<h3>Strona nie istnieje</h3";
         }

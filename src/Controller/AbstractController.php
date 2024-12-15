@@ -14,7 +14,7 @@ use Notes\Exceptions\StorageException;
 
 abstract class AbstractController
 {
-    protected const string DEFAULT_ACTION = 'list';
+    protected const DEFAULT_ACTION = 'list';
 
     private static array $configuration = [];
 

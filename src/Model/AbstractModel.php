@@ -37,6 +37,9 @@ class AbstractModel
         );
     }
 
+    /**
+     * @throws ConfigurationException
+     */
     private function validateConfig(array $config): void
     {
         if (
